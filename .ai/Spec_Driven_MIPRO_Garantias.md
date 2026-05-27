@@ -487,7 +487,6 @@ El app debe solicitar explícitamente permisos al sistema operativo del disposit
    - 🖼️ **Seleccionar de Galería** (Biblioteca).
 2. **Selección del Archivo:**
    - El sistema retorna la URI local temporal del archivo (ej. `ph://...` o `file://...`).
-   - Se valida el tamaño máximo permitido (límite recomendado: **10 MB por archivo**).
    - Se procesa un preview local visual en miniatura dentro del formulario.
 3. **Subida Diferida a API:**
    - Al presionar **"Enviar solicitud"** en el Paso 3, se realiza primero el `POST /garantias` y se obtiene el código de garantía (ej. `GAR-2024-0892`).
@@ -516,6 +515,15 @@ Los scripts SQL para la creación y manipulación de tablas en el backend `chz-p
    - Se crea un trigger por tabla (nombre del trigger finaliza en `_br`, ej. `cz_mi.armiga_br`) que orquesta de forma atómica:
      - El auto-incremento de la llave primaria de tipo código o numérico directo.
      - El seteo del usuario (`USER`) y fecha del sistema (`SYSDATE`) para `fecha_crea`, `usuario_crea`, `fecha_modifica` y `usuario_modifica` de forma transparente en inserciones y modificaciones.
+7. **Estructura Estándar de Secuencias:**
+   - La creación de secuencias debe declarar de manera explícita el esquema en minúsculas, seguidos de los límites físicos y el incremento con palabras clave en mayúsculas. Estructura obligatoria:
+     ```sql
+     CREATE SEQUENCE cz_mi.sqmiga
+       MINVALUE 1
+       MAXVALUE 9999999999
+       INCREMENT BY 1
+       START WITH 1;
+     ```
 
 ---
 

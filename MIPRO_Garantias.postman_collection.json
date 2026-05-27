@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "85cb327d-9515-434b-94b3-3a5d209c727f",
+		"name": "MIPRO Garantias (Experience API)",
+		"description": "Colección completa para probar los endpoints de la capa de experiencia del Módulo de Registro de Garantías de MIPRO.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"if (response && response.token) {",
+							"    pm.collectionVariables.set(\"jwt_token\", response.token);",
+							"    console.log(\"Token JWT guardado automáticamente en: {{jwt_token}}\");",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"correo\": \"maria@mipro.com\",\n  \"password\": \"hashed_password\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Catálogos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/catalogos",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"catalogos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Garantía",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"if (response && response.garantia) {",
+							"    pm.collectionVariables.set(\"garantia_id\", response.garantia);",
+							"    console.log(\"ID de garantía guardado automáticamente en: {{garantia_id}}\");",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"categoria\": \"1\",\n  \"lugar_compra\": \"E\",\n  \"descipcion\": \"El aire acondicionado no enfría y hace ruido.\",\n  \"direccion\": \"DIR-008\",\n  \"marca\": \"P\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/garantias",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"garantias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subir Adjunto Multimedia",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "garantia",
+							"value": "{{garantia_id}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/media",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"media"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Nueva Dirección",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"direccion\": \"Vía principal, Edificio Colinas\",\n  \"latitud\": 8.9830,\n  \"longitud\": -79.5190\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/direcciones",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"direcciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Historial de Garantías",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/garantias?tipo=historial",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"garantias"
+					],
+					"query": [
+						{
+							"key": "tipo",
+							"value": "historial"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Garantías Activas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/garantias?tipo=activas",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"garantias"
+					],
+					"query": [
+						{
+							"key": "tipo",
+							"value": "activas"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://chz-exp-pro-gc-qa-281956794940.us-east1.run.app",
+			"type": "string"
+		},
+		{
+			"key": "jwt_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "garantia_id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
