@@ -743,7 +743,7 @@ Esta tabla representa el registro maestro del ticket de garantía en la base de 
 | `marca` | **`VARCHAR2(1)`** | `NULL` | Código de la marca (Longitud 1). |
 | `lugar_compra` | **`VARCHAR2(1)`** | **`NOT NULL`** | Código del lugar de compra (Longitud 1 obligatoria). |
 | `modelo` | `VARCHAR2(100)` | `NULL` | Modelo específico del equipo (Opcional). |
-| `numero_seria` | `VARCHAR2(100)` | `NULL` | Número de serie físico del equipo (Opcional). |
+| `numero_serie` | `VARCHAR2(100)` | `NULL` | Número de serie físico del equipo (Opcional). |
 | `fecha_compra` | `DATE` | `NULL` | Fecha en la que se compró el equipo (Opcional). |
 | `descipcion` | `VARCHAR2(4000)` | **`NOT NULL`** | Explicación detallada del fallo técnico (Obligatorio). |
 | `direccion` | `VARCHAR2(36)` | **`NOT NULL`** | Identificador único de la dirección del cliente (`cz_mi.ARMCCLD`) (Obligatorio). |
@@ -783,7 +783,7 @@ CREATE TABLE cz_mi.armiga (
   marca                   VARCHAR2(1),
   lugar_compra            VARCHAR2(1)     NOT NULL,
   modelo                  VARCHAR2(100),
-  numero_seria            VARCHAR2(100),
+  numero_serie            VARCHAR2(100),
   fecha_compra            DATE,
   descipcion              VARCHAR2(4000)  NOT NULL,
   direccion               VARCHAR2(36)    NOT NULL,
@@ -804,7 +804,7 @@ COMMENT ON COLUMN cz_mi.armiga.categoria IS 'Categoria del producto (Codigo de 1
 COMMENT ON COLUMN cz_mi.armiga.marca IS 'Marca del equipo (Codigo de 1 caracter).';
 COMMENT ON COLUMN cz_mi.armiga.lugar_compra IS 'Lugar o sucursal de compra (Codigo de 1 caracter).';
 COMMENT ON COLUMN cz_mi.armiga.modelo IS 'Modelo especifico del equipo.';
-COMMENT ON COLUMN cz_mi.armiga.numero_seria IS 'Numero de serie fisico del equipo.';
+COMMENT ON COLUMN cz_mi.armiga.numero_serie IS 'Numero de serie fisico del equipo.';
 COMMENT ON COLUMN cz_mi.armiga.fecha_compra IS 'Fecha de adquisicion declarada.';
 COMMENT ON COLUMN cz_mi.armiga.descipcion IS 'Explicacion detallada del fallo reportado.';
 COMMENT ON COLUMN cz_mi.armiga.direccion IS 'Identificador de la direccion asociada (cz_mi.armccld).';

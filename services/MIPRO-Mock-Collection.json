@@ -1,0 +1,87 @@
+{
+	"info": {
+		"name": "MIPRO-Mock-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"url": { "raw": "{{baseUrl}}/login", "path": ["login"] }
+			},
+			"response": [{
+				"name": "Login Exitoso",
+				"status": "OK",
+				"code": 200,
+				"body": "{\"resultado\":{\"codigo\":0,\"mensaje\":\"\",\"warning\":\"\"},\"id\":\"USR-10293\",\"nombre\":\"María\",\"last_updated_catalogues\":\"2026-05-18T10:00:00Z\"}"
+			}]
+		},
+		{
+			"name": "Get Catalogos",
+			"request": {
+				"method": "GET",
+				"url": { "raw": "{{baseUrl}}/catalogos", "path": ["catalogos"] }
+			},
+			"response": [{
+				"name": "Catalogos",
+				"status": "OK",
+				"code": 200,
+				"body": "{\"last_updated\":\"2026-05-18T10:00:00Z\",\"productos\":[{\"categoria\":\"1\",\"nombre\":\"Linea blanca\"},{\"categoria\":\"2\",\"nombre\":\"Electronica\"}],\"marcas\":[{\"marca\":\"P\",\"nombre\":\"Panasonic\"},{\"marca\":\"L\",\"nombre\":\"LG\"}],\"lugares_compra\":[{\"lugar_compra\":\"1\",\"nombre\":\"Cochez\"},{\"lugar_compra\":\"3\",\"nombre\":\"Novey\"},{\"lugar_compra\":\"2\",\"nombre\":\"Kohler\"},{\"lugar_compra\":\"4\",\"nombre\":\"Punto Cochez\"},{\"lugar_compra\":\"0\",\"nombre\":\"Otros\"}]}"
+			}]
+		},
+		{
+			"name": "Create Garantia",
+			"request": {
+				"method": "POST",
+				"url": { "raw": "{{baseUrl}}/garantias", "path": ["garantias"] }
+			},
+			"response": [{
+				"name": "Creada",
+				"status": "OK",
+				"code": 200,
+				"body": "{\"resultado\":{\"codigo\":0,\"mensaje\":\"\",\"warning\":\"\"},\"garantia\":\"GAR-2024-1001\"}"
+			}]
+		},
+		{
+			"name": "Get Garantias",
+			"request": {
+				"method": "GET",
+				"url": { "raw": "{{baseUrl}}/garantias?cliente=CLI-10293", "path": ["garantias"], "query": [{"key": "cliente", "value": "CLI-10293"}] }
+			},
+			"response": [{
+				"name": "Listado",
+				"status": "OK",
+				"code": 200,
+				"body": "{\"resultado\":{\"codigo\":0,\"mensaje\":\"\",\"warning\":\"\"},\"garantias\":[{\"garantia\":\"GAR-0892\",\"fecha_compra\":\"2026-05-10\",\"no_arti\":\"SKU-987654\",\"marca\":\"P\",\"modelo\":\"Deluxe 2000\",\"estado\":\"A\"}]}"
+			}]
+		},
+		{
+			"name": "Upload Media",
+			"request": {
+				"method": "POST",
+				"url": { "raw": "{{baseUrl}}/media", "path": ["media"] }
+			},
+			"response": [{
+				"name": "Subido",
+				"status": "OK",
+				"code": 200,
+				"body": "{\"resultado\":{\"codigo\":0,\"mensaje\":\"\",\"warning\":\"\"},\"media\":452901,\"url\":\"https://storage.mipro.com/garantias/GAR-2024-0892_img1.jpg\"}"
+			}]
+		},
+		{
+			"name": "Create Direccion",
+			"request": {
+				"method": "POST",
+				"url": { "raw": "{{baseUrl}}/direcciones", "path": ["direcciones"] }
+			},
+			"response": [{
+				"name": "Creada",
+				"status": "OK",
+				"code": 200,
+				"body": "{\"resultado\":{\"codigo\":0,\"mensaje\":\"\",\"warning\":\"\"},\"direccion\":\"DIR-015\"}"
+			}]
+		}
+	],
+	"variable": [ { "key": "baseUrl", "value": "https://mock.pstmn.io" } ]
+}

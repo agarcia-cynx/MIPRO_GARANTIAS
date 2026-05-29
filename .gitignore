@@ -1,0 +1,26 @@
+# Ignore project subdirectories
+/app-mipro/
+/services/chz-exp-pro-gc/
+/services/chz-prc-pro-gc/
+
+# Common Node.js ignores
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Build files
+dist/
+build/
