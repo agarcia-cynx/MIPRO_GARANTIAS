@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+
+# Environment & secrets
+.env
+.env.*
+env.dev.yaml
+env.qa.yaml
+env.prod.yaml
+
+# Version control
+.git/
+.gitignore
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Test & coverage
+test/
+tests/
+coverage/
+.nyc_output/
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Documentation & misc
+README.md
+*.md
