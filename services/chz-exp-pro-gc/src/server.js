@@ -4,7 +4,7 @@ loadEnv();
 const app = require('./app');
 const logger = require('./config/logger');
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 const server = app.listen(PORT, () => {
   logger.info(`Servidor corriendo en el puerto ${PORT}`);
