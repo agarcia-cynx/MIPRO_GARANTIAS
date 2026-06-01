@@ -37,13 +37,13 @@
 					"raw": "{\n  \"correo\": \"maria@mipro.com\",\n  \"password\": \"hashed_password\"\n}"
 				},
 				"url": {
-					"raw": "{{base_url}}/api/login",
+					"raw": "{{base_url}}/api/x1-a7f",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"login"
+						"x1-a7f"
 					]
 				}
 			},
@@ -61,13 +61,13 @@
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}/api/catalogos",
+					"raw": "{{base_url}}/api/x2-b9k",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"catalogos"
+						"x2-b9k"
 					]
 				}
 			},
@@ -106,16 +106,16 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"categoria\": \"1\",\n  \"lugar_compra\": \"E\",\n  \"descipcion\": \"El aire acondicionado no enfría y hace ruido.\",\n  \"direccion\": \"DIR-008\",\n  \"marca\": \"P\"\n}"
+					"raw": "{\n  \"categoria\": \"1\",\n  \"lugar_compra\": \"E\",\n  \"descripcion\": \"El aire acondicionado no enfría y hace ruido.\",\n  \"direccion\": \"DIR-008\",\n  \"marca\": \"P\"\n}"
 				},
 				"url": {
-					"raw": "{{base_url}}/api/garantias",
+					"raw": "{{base_url}}/api/x3-m4q",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"garantias"
+						"x3-m4q"
 					]
 				}
 			},
@@ -148,13 +148,13 @@
 					]
 				},
 				"url": {
-					"raw": "{{base_url}}/api/media",
+					"raw": "{{base_url}}/api/x4-h8w",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"media"
+						"x4-h8w"
 					]
 				}
 			},
@@ -181,13 +181,13 @@
 					"raw": "{\n  \"direccion\": \"Vía principal, Edificio Colinas\",\n  \"latitud\": 8.9830,\n  \"longitud\": -79.5190\n}"
 				},
 				"url": {
-					"raw": "{{base_url}}/api/direcciones",
+					"raw": "{{base_url}}/api/x5-p2y",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"direcciones"
+						"x5-p2y"
 					]
 				}
 			},
@@ -205,13 +205,13 @@
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}/api/garantias?tipo=historial",
+					"raw": "{{base_url}}/api/x3-m4q?tipo=historial",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"garantias"
+						"x3-m4q"
 					],
 					"query": [
 						{
@@ -235,13 +235,13 @@
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}/api/garantias?tipo=activas",
+					"raw": "{{base_url}}/api/x3-m4q?tipo=activas",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"garantias"
+						"x3-m4q"
 					],
 					"query": [
 						{
