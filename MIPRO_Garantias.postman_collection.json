@@ -37,13 +37,13 @@
 					"raw": "{\n  \"correo\": \"maria@mipro.com\",\n  \"password\": \"hashed_password\"\n}"
 				},
 				"url": {
-					"raw": "{{base_url}}/api/x1-a7f",
+					"raw": "{{base_url}}/api/login",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"x1-a7f"
+						"login"
 					]
 				}
 			},
@@ -61,13 +61,13 @@
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}/api/x2-b9k",
+					"raw": "{{base_url}}/api/catalogos",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"x2-b9k"
+						"catalogos"
 					]
 				}
 			},
@@ -109,13 +109,13 @@
 					"raw": "{\n  \"categoria\": \"1\",\n  \"lugar_compra\": \"E\",\n  \"descripcion\": \"El aire acondicionado no enfría y hace ruido.\",\n  \"direccion\": \"DIR-008\",\n  \"marca\": \"P\"\n}"
 				},
 				"url": {
-					"raw": "{{base_url}}/api/x3-m4q",
+					"raw": "{{base_url}}/api/garantias",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"x3-m4q"
+						"garantias"
 					]
 				}
 			},
@@ -148,13 +148,13 @@
 					]
 				},
 				"url": {
-					"raw": "{{base_url}}/api/x4-h8w",
+					"raw": "{{base_url}}/api/media",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"x4-h8w"
+						"media"
 					]
 				}
 			},
@@ -181,13 +181,13 @@
 					"raw": "{\n  \"direccion\": \"Vía principal, Edificio Colinas\",\n  \"latitud\": 8.9830,\n  \"longitud\": -79.5190\n}"
 				},
 				"url": {
-					"raw": "{{base_url}}/api/x5-p2y",
+					"raw": "{{base_url}}/api/direcciones",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"x5-p2y"
+						"direcciones"
 					]
 				}
 			},
@@ -205,13 +205,13 @@
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}/api/x3-m4q?tipo=historial",
+					"raw": "{{base_url}}/api/garantias?tipo=historial",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"x3-m4q"
+						"garantias"
 					],
 					"query": [
 						{
@@ -235,13 +235,13 @@
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}/api/x3-m4q?tipo=activas",
+					"raw": "{{base_url}}/api/garantias?tipo=activas",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"x3-m4q"
+						"garantias"
 					],
 					"query": [
 						{

@@ -16,14 +16,14 @@ const upload = multer({
  * API Routes definitions
  */
 // Public routes
-router.post('/x1-a7f', authController.login);
+router.post('/login', authController.login);
 
 // Protected routes (require JWT)
-router.get('/x2-b9k', authMiddleware, warrantyController.getCatalogs);
-router.post('/x3-m4q', authMiddleware, warrantyController.create);
-router.get('/x3-m4q', authMiddleware, warrantyController.get);
-router.post('/x4-h8w', authMiddleware, upload.single('file'), mediaController.upload);
-router.post('/x5-p2y', authMiddleware, customerController.createAddress);
+router.get('/catalogos', authMiddleware, warrantyController.getCatalogs);
+router.post('/garantias', authMiddleware, warrantyController.create);
+router.get('/garantias', authMiddleware, warrantyController.get);
+router.post('/media', authMiddleware, upload.single('file'), mediaController.upload);
+router.post('/direcciones', authMiddleware, customerController.createAddress);
 
 module.exports = router;
 
